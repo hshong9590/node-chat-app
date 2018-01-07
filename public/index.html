@@ -10,7 +10,14 @@
 <body class="chat">
 
   <div class="chat__sidebar">
-    <h3>People</h3>
+    <br><br>
+    <h3>채팅 프로그램<br><br><br>
+      by 홍현석<br><br><br><br><br><br>
+      Stack<br><br>
+      - node.js<br>
+      - express.js<br>
+      - socket.io<br>
+    </h3>
     <div id="users"></div>
   </div>
 
@@ -19,14 +26,28 @@
 
     <div class="chat__footer">
       <form id="message-form">
-        <input name="message" type="text" placeholder="Message" autofocus autocomplete="off"/>
-        <button>Send</button>
+        <input name="message" type="text" placeholder="메시지를 입력하세요" autofocus autocomplete="off"/>
+        <button>입력</button>
       </form>
     </div>
   </div>
 
+  <script id="message-template" type="text/template">
+    <li class="message">
+      <div class="message__title">
+        <h4>{{from}}</h4>
+        <span>{{createdAt}}</span>
+      </div>
+      <div class="message__body">
+        <p>{{text}}</p>
+      </div>
+    </li>
+  </script>
+
   <script src="/socket.io/socket.io.js"></script>
   <script src="/js/libs/jquery-3.1.0.min.js"></script>
+  <script src="/js/libs/moment.js"></script>
+  <script src="/js/libs/mustache.js"></script>
   <script src="/js/index.js"></script>
 </body>
 
